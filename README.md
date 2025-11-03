@@ -73,6 +73,7 @@
 </li>
 </ul>
 <h4>Тесты</h4>
+<img width="1240" height="653" alt="image" src="https://github.com/user-attachments/assets/1e9e4112-d680-4272-9e3d-5f08c91d540e" />
 <hr>
 
 <h3 id="задание15">Задание 1.5</h3>
@@ -101,6 +102,7 @@
 </li>
 </ul>
 <h4>Тесты</h4>
+<img width="804" height="299" alt="image" src="https://github.com/user-attachments/assets/3648fd66-a502-415d-84c0-9ca82074d8e7" />
 <hr>
 
 <h3 id="задание21">Задание 2.1</h3>
@@ -121,6 +123,7 @@
 </li>
 </ul>
 <h4>Тесты</h4>
+<img width="646" height="296" alt="image" src="https://github.com/user-attachments/assets/a8b0d116-c980-453a-9fb5-5eb0bceb00d9" />
 <hr>
 
 <h3 id="задание31">Задание 3.1</h3>
@@ -139,8 +142,34 @@
 <li>Список массивов <code>[[1,5,3], [-2,-8,-1], [0]]</code> → максимумы: <code>[5, -1, 0]</code>.</li>
 </ol>
 <p><strong>Описание выполнения задания:</strong><br>
-
+<ul>
+<li>
+Создаем обобщенный метод <code>listAction</code> с типовыми параметрами <code>T,P</code>,
+</li>
+<li>
+ Метод принимает:
+  <ul>
+   <li>
+     список <code>list</code> типа <code>T</code> - исходный список значений,
+   </li>
+   <li>
+     Интерфейс <code>Action(T, P) action</code> - выполняющий действие с исходным списком.
+   </li>
+  </ul>
+</li>
+ <li>
+ Создается пустой список <code>result</code>, в котором будут в катором будут значения типа <code>P</code>,
+</li>
+ <li>
+ Далее метод проходит по списку и добавляет в результрующий список элементы после какого-то действия с помощью <code>action.apply(t)</code>,
+</li>
+ <li>
+ Возвращает <code>result</code>.
+</li>
+</ul>
 <h4>Тесты</h4>
+<img width="900" height="773" alt="image" src="https://github.com/user-attachments/assets/20babd96-05ee-4eb1-a886-2537e6091476" />
+<img width="946" height="547" alt="image" src="https://github.com/user-attachments/assets/9d9fdf5a-d115-4577-b1b0-4b870d8d6e0e" />
 <hr>
 
 <h3 id="задание32">Задание 3.2</h3>
@@ -157,9 +186,35 @@
 <li>Числа <code>[1, -3, 7]</code> → только положительные: <code>[1, 7]</code>.</li>
 <li>Массивы целых → оставить только те, где <strong>нет ни одного положительного</strong> числа.</li>
 </ol>
-<p><strong>Описание выполнения задания:</strong><br> 
-
+<p><strong>Описание выполнения задания:</strong><br></p>
+<ul>
+<li>
+Создаем обобщенный метод <code>filter</code> с типовым параметром <code>T</code>,
+</li>
+<li>
+ Метод принимает:
+  <ul>
+   <li>
+     список <code>list</code> типа <code>T</code> - исходный список значений,
+   </li>
+   <li>
+     Интерфейс <code>Test(T) condition</code> - выполняющий "фильтрацию" исходного списка.
+   </li>
+  </ul>
+</li>
+ <li>
+ Создается пустой список <code>result</code>, в котором будут "филтрованные" значения,
+</li>
+ <li>
+ Далее метод проходит по списку и проверяет условие выполнения для каждого элемента с помощью <code>condition.test(list.get(i))</code>, далее добавляем в <code>result</code>,
+</li>
+ <li>
+ Возвращает <code>result</code>.
+</li>
+</ul>
 <h4>Тесты</h4>
+<img width="667" height="775" alt="image" src="https://github.com/user-attachments/assets/141b1d09-459d-48b2-b867-06a86cdfdda1" />
+<img width="672" height="546" alt="image" src="https://github.com/user-attachments/assets/d72b9831-3fe2-4cbd-9834-2abdc1cc4bd7" />
 <hr>
 
 <h3 id="задание33">Задание 3.3</h3>
@@ -172,9 +227,41 @@
 <li>Список чисел <code>[1, -3, 7]</code> → сумма: <code>5</code>.</li>
 <li>Список списков → общее количество элементов (например, через комбинацию map + reduce).</li>
 </ol>
-<p><strong>Описание выполнения задания:</strong><br><strong><code>interface NumericValue</code></strong></p>
-
+<p><strong>Описание выполнения задания:</strong><br></p>
+<ul>
+<li>
+Создаем обобщенный метод <code>reduc</code> с типовым параметром <code>T</code>,
+</li>
+<li>
+ Метод принимает:
+  <ul>
+   <li>
+     список <code>list</code> типа <code>T</code> - исходный список значений,
+   </li>
+   <li>
+     Объект типа <code>T</code>, который вернется методом в случае елси исходный список или результат будут <code>null</code>,
+   </li>
+   <li>
+     Интерфейс <code>Rule(T) rule</code> - Выполняющий скращение исходного списка.
+   </li>
+  </ul>
+</li>
+<li>
+ Метод проверяет что исзодный список не пустой,
+</li>
+ <li>
+ Формируется результат с помощью вызова <code>rule.rule(list)</code>,
+</li>
+ <li>
+ Проверется, что результат не <code>null</code>,
+</li>
+ <li>
+ Возвращает объект типа <code>T</code>.
+</li>
+</ul>
 <h4>Тесты</h4>
+<img width="696" height="779" alt="image" src="https://github.com/user-attachments/assets/77c7584a-07ee-4123-b3b9-c31f9bf681a2" />
+<img width="618" height="605" alt="image" src="https://github.com/user-attachments/assets/eb945e88-a5f6-4cf5-b700-ae7cb0836e19" />
 <hr>
 
 <h3 id="задание34">Задание 3.4</h3>
@@ -192,13 +279,13 @@
 <li>Строки <code>["qwerty", "asdfg", "zx", "qw"]</code> → сгруппировать по длине.</li>
 <li>Строки с дубликатами → вернуть без повторов.</li>
 </ol>
-<p><strong>Описание выполнения задания:</strong><br>
+<p><strong>Описание выполнения задания:<br>
 <ul>
 <li>
 Создаем обобщенный метод <code>collect</code> с типовыми параметрами <code>T, P</code>,
 </li>
 <li>
- метод принимает:
+ Метод принимает:
   <ul>
    <li>
      список <code>list</code> типа <code>T</code> - исходный список значений,
@@ -207,7 +294,7 @@
      функциональный интерфейс <code>Supplier<P> creatingMethod</code> - используется для создания пустой результирующей коллекции типа <code>P</code>,
    </li>
    <li>
-     функциональный интерфейс <code>BiConsumer<P, T> addMethod</code> - принимающий два аргумента: коллекцию типа <code>P</code> и элемент типа <code>T</code>, и выполняющий добавление элемента в коллекцию,
+     функциональный интерфейс <code>BiConsumer(P, T) addMethod</code> - принимающий два аргумента: коллекцию типа <code>P</code> и элемент типа <code>T</code>, и выполняющий добавление элемента в коллекцию,
    </li>
   </ul>
 </li>
@@ -219,6 +306,8 @@
 </li>
 </ul>
 <h4>Тесты</h4>
+ <img width="535" height="565" alt="image" src="https://github.com/user-attachments/assets/c44fd05b-28be-41d6-84c9-98ee2f746a38" />
+<img width="794" height="334" alt="image" src="https://github.com/user-attachments/assets/4637abf1-ffab-4753-82f1-482c33334fdc" />
 <hr>
 
 <h2 id="структура-проекта">Структура проекта</h2>
